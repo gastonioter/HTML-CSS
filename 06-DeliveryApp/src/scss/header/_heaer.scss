@@ -1,0 +1,21 @@
+@use '../base/mixins' as m;
+
+.header {
+    @include m.desktop {
+        display: flex;
+        justify-content: space-between;
+
+    }
+
+    padding: 5rem 0;
+
+    &__logoBx {
+        width: 30rem;
+        margin: 0 auto;
+
+        @include m.desktop {
+            margin: 0;
+        }
+
+    }
+}

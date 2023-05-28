@@ -1,0 +1,33 @@
+@use '../base/variables' as v;
+@use '../base/mixins' as m;
+
+.navegacion {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    margin-top: 5rem;
+
+    @include m.desktop {
+        flex-direction: row;
+    }
+
+    &__link {
+        font-weight: 700;
+        font-size: 2rem;
+        text-transform: capitalize;
+    }
+
+    &__link--regisrtar {
+        @include m.boton(v.$primario, v.$blanco);
+
+        @include m.desktop {
+            width: auto;
+        }
+
+        &:hover {
+            cursor: pointer;
+        }
+    }
+}

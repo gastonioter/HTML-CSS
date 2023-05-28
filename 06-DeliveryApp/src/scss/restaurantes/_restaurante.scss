@@ -1,0 +1,54 @@
+@use '../base/variables' as v;
+@use '../base/mixins' as m;
+
+.restaurante {
+    background-color: v.$blanco;
+    padding: v.$separacion;
+    margin-top: 2rem;
+    border-radius: 1rem;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 0px 2.6rem -.8rem darken(v.$grisClaro, 20%);
+    gap: 4rem;
+
+    @include m.tablet {
+        flex-direction: row;
+    }
+
+    @include m.tablet {
+
+        &:nth-child(1),
+        &:nth-child(2) {
+            margin-top: 0;
+        }
+    }
+
+    &__nombre {
+        text-transform: capitalize;
+        color: v.$primario;
+        margin: 1rem 0 2rem 0;
+        text-align: center;
+    }
+
+    &__texto {
+        line-height: 1.7;
+        font-size: 1.6rem;
+        text-align: center;
+
+    }
+
+    &__calificacion--imagen {
+        margin: 0 auto;
+    }
+
+    &__imagenBx {
+        max-width: 20rem;
+    }
+
+    &__imagen {
+        width: 100%;
+    }
+}

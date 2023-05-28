@@ -3,46 +3,46 @@ const imagemin = require('gulp-imagemin');
 const webp = require('gulp-webp');
 const avif = require('gulp-avif');
 
-function imagesWebpFormatter(done){
+function imagesWebpFormatter(done) {
 
     const opciones = {
-        quality:50
+        quality: 50
     };
 
     src('./src/img/**/*{jpg,png}')
-    .pipe(webp(opciones))
-    .pipe(dest('./build/img'));
+        .pipe(webp(opciones))
+        .pipe(dest('./build/img'));
 
     done();
 }
 
 
-function imagesAvifFormatter(done){
+function imagesAvifFormatter(done) {
 
     const opciones = {
-        quality:50
+        quality: 50
     };
 
     src('./src/img/**/*{jpg,png}')
-    .pipe(avif(opciones))
-    .pipe(dest('./build/img'));
+        .pipe(avif(opciones))
+        .pipe(dest('./build/img'));
 
     done();
 }
 
 
-function imagesAdder(done){
+function imagesAdder(done) {
     src('./src/img/**/*')
-    .pipe(imagemin({optimizaitonLevel:3}))
-    .pipe(dest('./build/img'))
+        .pipe(imagemin({ optimizaitonLevel: 3 }))
+        .pipe(dest('./build/img'))
     done();
 }
 
-function imagesWatcher(){
-    watch('./src/img/**/*',imagesAdder)
+function imagesWatcher() {
+    watch('./src/img/**/*', imagesAdder)
 }
 
-module.exports.imagesAdder=imagesAdder;
-module.exports.imagesWatcher=imagesWatcher;
-module.exports.imagesWebpFormatter=imagesWebpFormatter; 
-module.exports.imagesAvifFormatter=imagesAvifFormatter;
+module.exports.imagesAdder = imagesAdder;
+module.exports.imagesWatcher = imagesWatcher;
+module.exports.imagesWebpFormatter = imagesWebpFormatter;
+module.exports.imagesAvifFormatter = imagesAvifFormatter;
